@@ -21,14 +21,14 @@ export class LoginPage {
 
 
     async enterEmail(email: string) {
-        await this.emailAddressTxt.fill(email); // ✅ dynamic
+        await this.emailAddressTxt.fill(email); // dynamicallya adds
     }
 
     async enterPassword(password: string) {
-        await this.passwordTxt.fill(password); // ✅ dynamic
+        await this.passwordTxt.fill(password); // dynamicallya adds
     }
 
     async doLogin() {
-        await this.loginButton.click(); // ✅ await added
+        await this.loginButton.click(); 
     }
 }

@@ -12,10 +12,9 @@ test.describe('Group1', async () => {
 
     const testData = DataProvider.getTestDataFromJson('testdata/data.json')[0];
 
-    test('@regrssion Login to Account and AddToCart', async ({ page }) => {
+    test('@regression Login to Account and AddToCart', async ({ page }) => {
 
-        await navigateToLogin(page); // 👈 Reusable helper
-
+        await navigateToLogin(page); //  Reusable helper
         await expect(page).toHaveTitle(PAGE_TITLES.LOGIN);
 
         const loginPage = new LoginPage(page);
@@ -28,10 +27,9 @@ test.describe('Group1', async () => {
         await myAccountPage.clickOnCameras();
         await expect(page).toHaveTitle(PAGE_TITLES.CAMERAS);
 
-
         const camerasPage = new CamerasPage(page);
         const isClicked = await camerasPage.addProductToCartByFirstName(PRODUCTS.NIKON);
-        expect(isClicked).toBe(true);  // Assert that Add to Cart button was clicked
+        expect(isClicked).toBe(true);               // Assert that Add to Cart button was clicked
         await camerasPage.openCartDropdown();
         await camerasPage.goToCartPage();
         await expect(page).toHaveTitle(PAGE_TITLES.SHOPPING_CART);

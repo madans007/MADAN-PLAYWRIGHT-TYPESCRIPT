@@ -11,7 +11,7 @@ export class MyAccountPage {
     }
 
     async clickOnCameras(): Promise<void> {
-        const navItems = await this.navItemCameras.elementHandles(); // ✅ array of ElementHandle<Node>
+        const navItems = await this.navItemCameras.elementHandles(); //  array of ElementHandle<Node>
 
         for (const item of navItems) {
             const text = await item.innerText();

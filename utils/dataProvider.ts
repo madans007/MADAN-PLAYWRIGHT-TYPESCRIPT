@@ -5,13 +5,13 @@ export class DataProvider {
 
     static getTestDataFromJson(filePath: string) {
         const raw = fs.readFileSync(filePath, 'utf8');
-        return JSON.parse(raw); // ✅ fixed
+        return JSON.parse(raw); 
     }
 
     static getTestDataFromCsv(filePath: string) {
         return parse(fs.readFileSync(filePath), {
-            columns: true,
-            skip_empty_lines: true
+            columns: true,                  // meaning first row will be skipped for column names
+            skip_empty_lines: true          // empty lines are skipped, if any
         });
     }
 
