@@ -23,7 +23,7 @@ jobs:
 
     # Step 3: Cache node_modules for faster installs
     - name: Cache Node.js modules
-      uses: actions/cache@v2
+      uses: actions/cache@v4  # Updated here from v2 to v4
       with:
         path: node_modules
         key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
