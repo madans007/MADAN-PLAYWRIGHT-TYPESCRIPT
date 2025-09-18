@@ -2,7 +2,7 @@
 The project is a basic end to end flow encompassing below scenarios.
 
 
-🧾 Sample Test Scenario:
+## 🧾 Sample Test Scenario:
 
 - Navigate to login page  
 - Log in using credentials through a data-driven approach  
@@ -11,19 +11,37 @@ The project is a basic end to end flow encompassing below scenarios.
 - View the cart  
 - Assert cart contents and page title  
 
+---
 
-📁 Project Structure
+## 📁 Project Structure
 
-├── pages/ → Page Object Model classes (LoginPage, MyAccountPage, CamerasPage)
-├── tests/ → Test specs
-├── testdata/ → JSON test data
-├── utils/ → Helpers (e.g., dataProvider, navigation)
-├── constants/ → Constants like URLs, expected titles, product names
-├── playwright.config.ts → Playwright configuration
-└── README.md → You're here
+├── .github/
+│   └── workflows/ → GitHub Actions workflow YAML files (e.g., playwright.yml)
+│
+├── cucumber-features/ → Gherkin `.feature` files describing test scenarios
+├── cucumber-step-definitions/ → Step definition files (TypeScript functions for Gherkin steps)
+│
+├── pages/ → Page Object Model classes (e.g., LoginPage, MyAccountPage, CamerasPage)
+├── tests/ → Additional test specs if needed
+├── testdata/ → Test data in JSON format
+├── utils/ → Utility helpers (e.g., data provider, navigation helpers)
+├── constants/ → Shared constants (URLs, expected titles, product names)
+│
+├── allure-results/ → Raw Allure test results (auto-generated after test run)
+├── allure-report/ → Final HTML Allure report (generated from allure-results)
+│
+├── playwright-report/ → Playwright's native HTML report (auto-generated)
+├── test-results/ → Optional directory for storing consolidated test outputs
+│
+├── cucumber-report.html → Generated HTML report from Cucumber CLI
+│
+├── playwright.config.ts → Playwright configuration file
+├── tsconfig.json → TypeScript configuration
+├── .gitignore → Files and folders to exclude from Git
+└── README.md → Project documentation (you’re here!)
 
 
-Features
+## Features
 
 - Modular Page Object Model (POM) design
 - Data-driven testing with JSON support
@@ -58,45 +76,43 @@ This project uses [Playwright](https://playwright.dev/) with [Cucumber](https://
 
 ---
 
-Running Tests:
+## Running Tests:
 npx cucumber-js cucumber-features --require cucumber-step-definitions/**/*.ts --require-module ts-node/register 
 
 This command will:
 
-Load feature files from cucumber-features/
-
-Load step definitions from cucumber-step-definitions/
-
-Compile TypeScript on the fly
+- Load feature files from cucumber-features/
+- Load step definitions from cucumber-step-definitions/
+- Compile TypeScript on the fly
 
 ---
 
 OR  (with tagged test case):
-npx cucumber-js cucumber-features --require cucumber-step-definitions/**/*.ts --require-module ts-node/register --tags @Regression
+
+- npx cucumber-js cucumber-features --require cucumber-step-definitions/**/*.ts --require-module ts-node/register --tags @Regression
 
 OR (with html report):
-npx cucumber-js cucumber-features --require cucumber-step-definitions/**/*.ts --require-module ts-node/register --format html:cucumber-report.html
+
+- npx cucumber-js cucumber-features --require cucumber-step-definitions/**/*.ts --require-module ts-node/register --format html:cucumber-report.html
 
 OR (retry for failed test cases):
-npx cucumber-js cucumber-features --require cucumber-step-definitions/**/*.ts --require-module ts-node/register --retry 1
+
+- npx cucumber-js cucumber-features --require cucumber-step-definitions/**/*.ts --require-module ts-node/register --retry 1
 
 ---
 
-Notes
+## Notes
 
-Playwright's page object is accessed via Cucumber's this.page in step definitions.
-
-Test data is loaded from JSON files via a data provider utility.
-
-Page Objects encapsulate UI actions and assertions.
-
-Feature files can contain multiple scenarios (test cases).
+- Playwright's page object is accessed via Cucumber's this.page in step definitions.
+- Test data is loaded from JSON files via a data provider utility.
+- Page Objects encapsulate UI actions and assertions.
+- Feature files can contain multiple scenarios (test cases).
 
 ---
 
-Troubleshooting
+## Troubleshooting
 
-Ensure tsconfig.json includes:
+- Ensure tsconfig.json includes:
 
 {
   "compilerOptions": {
@@ -104,6 +120,5 @@ Ensure tsconfig.json includes:
   }
 }
 
-
-If you get "module not found" errors, verify your folder structure and file names carefully.
+- If you get "module not found" errors, verify your folder structure and file names carefully.
 
