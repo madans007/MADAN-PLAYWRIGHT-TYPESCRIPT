@@ -23,7 +23,7 @@ jobs:
 
     # Step 3: Cache node_modules for faster installs
     - name: Cache Node.js modules
-      uses: actions/cache@v4  # Updated here from v2 to v4
+      uses: actions/cache@v4
       with:
         path: node_modules
         key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
@@ -42,9 +42,9 @@ jobs:
     - name: Run Playwright tests
       run: npx playwright test --reporter=line,allure-playwright
 
-    # Step 7: Install Allure CLI globally (fix for allure command not found)
+    # ✅ Step 7: Install Allure CLI (correct version)
     - name: Install Allure CLI
-      run: npm install -g allure-commandline@2.48.1
+      run: npm install -g allure-commandline@2.13.9
 
     # Step 8: Generate Allure HTML Report
     - name: Generate Allure HTML Report
