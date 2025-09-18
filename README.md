@@ -16,29 +16,29 @@ The project is a basic end to end flow encompassing below scenarios.
 ## 📁 Project Structure
 
 ├── .github/
-│   └── workflows/ → GitHub Actions workflow YAML files (e.g., playwright.yml)
+│   └── workflows/               → GitHub Actions workflow YAML files (e.g., playwright.yml)
 │
-├── cucumber-features/ → Gherkin `.feature` files describing test scenarios
-├── cucumber-step-definitions/ → Step definition files (TypeScript functions for Gherkin steps)
+├── cucumber-features/           → Gherkin .feature files describing test scenarios
+├── cucumber-step-definitions/   → Step definition files (TypeScript functions for Gherkin steps)
 │
-├── pages/ → Page Object Model classes (e.g., LoginPage, MyAccountPage, CamerasPage)
-├── tests/ → Additional test specs if needed
-├── testdata/ → Test data in JSON format
-├── utils/ → Utility helpers (e.g., data provider, navigation helpers)
-├── constants/ → Shared constants (URLs, expected titles, product names)
+├── pages/                       → Page Object Model classes (e.g., LoginPage, MyAccountPage, CamerasPage)
+├── tests/                       → Additional test specs if needed
+├── testdata/                    → Test data in JSON format
+├── utils/                       → Utility helpers (e.g., data provider, navigation helpers)
+├── constants/                   → Shared constants (URLs, expected titles, product names)
 │
-├── allure-results/ → Raw Allure test results (auto-generated after test run)
-├── allure-report/ → Final HTML Allure report (generated from allure-results)
+├── allure-results/              → Raw Allure test results (auto-generated after test run)
+├── allure-report/               → Final HTML Allure report (generated from allure-results)
 │
-├── playwright-report/ → Playwright's native HTML report (auto-generated)
-├── test-results/ → Optional directory for storing consolidated test outputs
+├── playwright-report/           → Playwright's native HTML report (auto-generated)
+├── test-results/                → Optional directory for storing consolidated test outputs
 │
-├── cucumber-report.html → Generated HTML report from Cucumber CLI
-│
-├── playwright.config.ts → Playwright configuration file
-├── tsconfig.json → TypeScript configuration
-├── .gitignore → Files and folders to exclude from Git
-└── README.md → Project documentation (you’re here!)
+├── cucumber-report.html         → Generated HTML report from Cucumber CLI
+├── playwright.config.ts         → Playwright configuration file
+├── tsconfig.json                → TypeScript configuration
+├── .gitignore                   → Files and folders to exclude from Git
+└── README.md                    → Project documentation (you’re here!)
+
 
 
 ## Features
