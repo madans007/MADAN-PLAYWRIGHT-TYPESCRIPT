@@ -27,9 +27,6 @@ The project is a basic end to end flow encompassing below scenarios.
 ├── utils/                       → Utility helpers (e.g., data provider, navigation helpers)
 ├── constants/                   → Shared constants (URLs, expected titles, product names)
 │
-├── allure-results/              → Raw Allure test results (auto-generated after test run)
-├── allure-report/               → Final HTML Allure report (generated from allure-results)
-│
 ├── playwright-report/           → Playwright's native HTML report (auto-generated)
 ├── test-results/                → Optional directory for storing consolidated test outputs
 │
@@ -38,7 +35,6 @@ The project is a basic end to end flow encompassing below scenarios.
 ├── tsconfig.json                → TypeScript configuration
 ├── .gitignore                   → Files and folders to exclude from Git
 └── README.md                    → Project documentation (you’re here!)
-
 
 
 ## Features
