@@ -1,3 +1,5 @@
+//to read data from json & csv
+
 import fs from 'fs';
 import { parse } from 'csv-parse/sync';
 

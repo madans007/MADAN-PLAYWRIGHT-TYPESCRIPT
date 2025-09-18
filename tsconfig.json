@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "*": ["*", "pages/*", "utils/*", "cucumber-step-definitions/*"]
+    }
+  },
+  "include": ["pages/**/*.ts", "utils/**/*.ts", "cucumber-step-definitions/**/*.ts"]
+}
