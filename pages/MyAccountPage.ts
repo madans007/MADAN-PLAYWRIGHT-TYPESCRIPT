@@ -21,6 +21,20 @@ export class MyAccountPage {
             }
         }
 
+        /*
+            // use below code for direct methods using locator and text
+            // add variables accordingly in constructor and modify, if used
+
+        await page.locator('ul.navbar-nav li a', { hasText: 'Cameras' }).click();
+        await expect(page).toHaveTitle('Cameras');
+
+        OR
+
+        await page.getByRole('link', { name: 'Cameras' }).click();
+        await expect(page).toHaveTitle('Cameras');
+
+        */
+
         await this.page.waitForLoadState('networkidle');
         //await expect(this.page).toHaveTitle('Cameras'); // Optional validation
     }
