@@ -14,7 +14,7 @@ test.describe('Group1', async () => {
 
     test('@regression Login to Account and AddToCart', async ({ page }) => {
 
-        await navigateToLogin(page); //  Reusable helper
+        await navigateToLogin(page);
         await expect(page).toHaveTitle(PAGE_TITLES.LOGIN);
 
         const loginPage = new LoginPage(page);

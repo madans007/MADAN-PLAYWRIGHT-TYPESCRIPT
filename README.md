@@ -16,25 +16,39 @@ The project is a basic end to end flow encompassing below scenarios.
 ## 📁 Project Structure
 
 ├── .github/
-│   └── workflows/               → GitHub Actions workflow YAML files (e.g., playwright.yml)
+│   └── workflows/                # GitHub Actions workflow YAML files (e.g., playwright.yml)
 │
-├── cucumber-features/           → Gherkin .feature files describing test scenarios
-├── cucumber-step-definitions/   → Step definition files (TypeScript functions for Gherkin steps)
+├── allure-results/               # Allure report results (auto-generated after test runs)
 │
-├── pages/                       → Page Object Model classes (e.g., LoginPage, MyAccountPage, CamerasPage)
-├── tests/                       → Additional test specs if needed
-├── testdata/                    → Test data in JSON format
-├── utils/                       → Utility helpers (e.g., data provider, navigation helpers)
-├── constants/                   → Shared constants (URLs, expected titles, product names)
+├── cucumber-features/            # Gherkin .feature files describing test scenarios
 │
-├── playwright-report/           → Playwright's native HTML report (auto-generated)
-├── test-results/                → Optional directory for storing consolidated test outputs
+├── cucumber-step-definitions/    # Step definition files (TypeScript functions for Gherkin steps)
 │
-├── cucumber-report.html         → Generated HTML report from Cucumber CLI
-├── playwright.config.ts         → Playwright configuration file
-├── tsconfig.json                → TypeScript configuration
-├── .gitignore                   → Files and folders to exclude from Git
-└── README.md                    → Project documentation (you’re here!)
+├── fixtures/                     # Base test setup (e.g., baseTest.ts and any common fixtures)
+│   └── baseTest.ts               # Base test setup for Playwright, etc.
+│
+├── pages/                        # Page Object Model classes (e.g., LoginPage, MyAccountPage, CamerasPage)
+│
+├── tests/                        # Additional test specs if needed
+│
+├── testdata/                     # Test data in JSON format
+│
+├── utils/                        # Utility helpers (e.g., data provider, navigation helpers, constants)
+│   ├── constants.ts              # Shared constants (URLs, expected titles, product names)
+│   ├── dataProvider.ts           # Data provider utilities
+│   ├── navigation.ts             # Navigation helpers
+│   └── otherUtils.ts             # Other utility helpers (if any)
+│
+├── playwright-report/            # Playwright's native HTML report (auto-generated)
+│
+├── test-results/                 # Optional directory for storing consolidated test outputs
+│
+├── cucumber-report.html          # Generated HTML report from Cucumber CLI
+├── playwright.config.ts          # Playwright configuration file
+├── tsconfig.json                 # TypeScript configuration
+├── .gitignore                    # Files and folders to exclude from Git
+└── README.md                     # Project documentation (you’re here!)
+
 
 
 ## Features
