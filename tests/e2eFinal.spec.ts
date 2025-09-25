@@ -33,7 +33,9 @@ test.describe('Group1', async () => {
         await camerasPage.openCartDropdown();
         await camerasPage.goToCartPage();
         await expect(page).toHaveTitle(PAGE_TITLES.SHOPPING_CART);
-        await page.waitForTimeout(5000);
+      //await page.waitForTimeout(5000);     //example for hard wait (not to be confused with dynamic waits)
+
+      
 
     })
 
