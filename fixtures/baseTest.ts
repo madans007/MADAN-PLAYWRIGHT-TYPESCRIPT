@@ -4,7 +4,7 @@ import { MyAccountPage } from '../pages/MyAccountPage';
 import { CamerasPage } from '../pages/CamerasPage';
 
 type Pages = {
-  loginPage: LoginPage;
+  loginPage: LoginPage;                    //It means that loginPage is expected to be an instance of the LoginPage class.
   myAccountPage: MyAccountPage;
   camerasPage: CamerasPage;
 };
