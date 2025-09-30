@@ -2,8 +2,8 @@
 name: Playwright Tests (Docker)
 
 on:
-  workflow_dispatch:   # manual trigger from Actions tab
-  # If you want to auto-run, uncomment below:
+  workflow_dispatch:   # Manual trigger
+  # Uncomment below to auto-run on push/pull_request
   # push:
   #   branches: [ main, master ]
   # pull_request:
@@ -11,24 +11,27 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest   # GitHub host machine
-    container:               # Actual environment is this Docker image
-      image: mcr.microsoft.com/playwright:v1.55.0-jammy
-      options: --pull
+    runs-on: ubuntu-latest
     timeout-minutes: 60
 
     steps:
+      # Checkout your repo
       - uses: actions/checkout@v4
 
-      - name: Install dependencies
-        run: npm ci
+      # Pull the correct Playwright Docker image
+      - name: Pull Playwright Docker Image
+        run: docker pull mcr.microsoft.com/playwright:v1.55.0-jammy
 
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
+      # Install dependencies inside the container and run tests
+      - name: Run Playwright Tests in Docker
+        run: |
+          docker run --rm \
+            -v ${{ github.workspace }}:/work \
+            -w /work \
+            mcr.microsoft.com/playwright:v1.55.0-jammy \
+            bash -c "npm ci && npx playwright install --with-deps && npx playwright test --reporter=line"
 
-      - name: Run Playwright tests
-        run: npx playwright test --reporter=line
-
+     
       - name: Upload Playwright HTML Report
         if: ${{ !cancelled() }}
         uses: actions/upload-artifact@v4
@@ -37,6 +40,7 @@ jobs:
           path: "playwright-report/"
           retention-days: 30
 
+      
       - name: Upload Test Videos
         if: ${{ !cancelled() }}
         uses: actions/upload-artifact@v4
