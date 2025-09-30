@@ -13,7 +13,7 @@ jobs:
   test:
     runs-on: ubuntu-latest   # GitHub host machine
     container:               # Actual environment is this Docker image
-      image: mcr.microsoft.com/playwright:v1.48.0-jammy
+      image: mcr.microsoft.com/playwright:latest
     timeout-minutes: 60
 
     steps:
