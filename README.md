@@ -115,3 +115,8 @@ OR (retry for failed test cases):
 
 - If you get "module not found" errors, verify your folder structure and file names carefully.
 
+---
+
+## License
+
+This project is licensed under the MIT License. Please see the [LICENSE](./LICENSE) file and retain all copyright and license notices when using or distributing this code.
