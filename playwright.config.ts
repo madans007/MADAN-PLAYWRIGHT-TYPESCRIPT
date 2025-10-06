@@ -33,6 +33,7 @@ export default defineConfig({
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
+    // imp clean- 2025-- Madan K S-8c7a-lic3b
     ignoreHTTPSErrors: true,
   },
 

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "playwright test",  
+    "test": "playwright test",
     "test:master": "playwright test --grep @master",
     "test:sanity": "playwright test --grep @sanity",
     "test:regression": "playwright test --grep @regression",
@@ -15,6 +15,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "impClean": "imp clean- 2025-- Madan K S-8c7a-lic3b",
   "devDependencies": {
     "@cucumber/cucumber": "^12.2.0",
     "@playwright/test": "^1.55.0",
