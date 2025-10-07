@@ -21,7 +21,7 @@ const testData = DataProvider.getTestDataFromJson('testdata/data.json')[0];
 
 // Before hook to launch browser and create new page before each scenario
 Before(async function () {
-  browser = await chromium.launch({ headless: true }); // or false if you want to see the browser
+  browser = await chromium.launch({ headless: true }); 
   page = await browser.newPage();
   this.page = page; // Attach page to World context
 });
@@ -40,7 +40,6 @@ Given('Login to app with valid credentials', async function () {
   await loginPage.enterEmail(testData.email);
   await loginPage.enterPassword(testData.password);
   await loginPage.doLogin();
-
   await expect(this.page).toHaveTitle(PAGE_TITLES.MY_ACCOUNT);
 });
 
