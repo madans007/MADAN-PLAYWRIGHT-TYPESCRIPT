@@ -10,10 +10,10 @@ import { MyAccountPage } from '../pages/MyAccountPage';
 import { CamerasPage } from '../pages/CamerasPage';
 import { PAGE_TITLES, PRODUCTS, NAV_ITEMS } from '../utils/constants';
 
-let browser: Browser;
+let browser: Browser;                         // Declare a variable for the browser instance.
 let page: Page;
 
-let loginPage: LoginPage;
+let loginPage: LoginPage;                     // Declare a variable for the LoginPage object.
 let myAccountPage: MyAccountPage;
 let camerasPage: CamerasPage;
 
@@ -23,7 +23,7 @@ const testData = DataProvider.getTestDataFromJson('testdata/data.json')[0];
 Before(async function () {
   browser = await chromium.launch({ headless: true }); 
   page = await browser.newPage();
-  this.page = page; // Attach page to World context
+  this.page = page;                          // Attach the page object to the World context, making it accessible in step definitions.
 });
 
 // After hook to close browser after each scenario
@@ -36,7 +36,7 @@ Given('Login to app with valid credentials', async function () {
   await navigateToLogin(this.page);
   await expect(this.page).toHaveTitle(PAGE_TITLES.LOGIN);
 
-  loginPage = new LoginPage(this.page);
+  loginPage = new LoginPage(this.page);             // Instantiate a LoginPage object, passing the page for interaction.
   await loginPage.enterEmail(testData.email);
   await loginPage.enterPassword(testData.password);
   await loginPage.doLogin();

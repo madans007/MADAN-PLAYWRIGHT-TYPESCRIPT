@@ -18,7 +18,7 @@
   "impClean": "imp clean- 2025-- Madan K S-8c7a-lic3b",
   "devDependencies": {
     "@cucumber/cucumber": "^12.2.0",
-    "@playwright/test": "^1.55.0",
+    "@playwright/test": "^1.56.0",
     "@types/node": "^24.5.0",
     "allure-playwright": "^3.4.1",
     "ts-node": "^10.9.2",
