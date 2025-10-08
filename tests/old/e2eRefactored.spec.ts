@@ -2,7 +2,7 @@ import { test, expect, Locator } from '@playwright/test';
 
 test.describe('Group1', () => {
 
-    test.only('@regression Login to Account and AddToCart', async ({ page }) => {
+    test('@regression Login to Account and AddToCart', async ({ page }) => {
 
         await page.goto('https://tutorialsninja.com/demo/index.php?route=account/login');
         await expect(page).toHaveTitle('Account Login');
