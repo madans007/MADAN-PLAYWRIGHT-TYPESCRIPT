@@ -10,7 +10,7 @@ export class LoginPage {
 
     constructor(page: Page) {
         this.page = page;
-
+        
         // Initialize locators
         this.emailAddressTxt = page.locator('#input-email');
         this.passwordTxt = page.locator('#input-password');
