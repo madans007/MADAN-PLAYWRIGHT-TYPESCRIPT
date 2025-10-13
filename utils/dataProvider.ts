@@ -2,11 +2,12 @@
 
 import fs from 'fs';
 import { parse } from 'csv-parse/sync';
+//import * as xlsx from xlsx;   //only if you have added xlsx dependency and working with excel
 
 export class DataProvider {
 
     static getTestDataFromJson(filePath: string) {
-        const raw = fs.readFileSync(filePath, 'utf8');
+        const raw = fs.readFileSync(filePath, 'utf8');      // read file synchronously
         return JSON.parse(raw); 
     }
 
