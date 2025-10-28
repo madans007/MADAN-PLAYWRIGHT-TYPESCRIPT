@@ -34,7 +34,6 @@ test.describe('End to End flow', () => {
 
         const cameraProductNames: Locator = page.locator('div.caption h4 a');
         const allCameraProducts: number = await cameraProductNames.count();
-
         for (let i = 0; i < allCameraProducts; i++) {
             const cameraName: string = await cameraProductNames.nth(i).innerText();
             console.log(`Name of Item:, ${cameraName}`);
@@ -42,9 +41,9 @@ test.describe('End to End flow', () => {
                 await cameraProductNames.nth(i).click();
                 break;
             }
-
         }
-
+        
+        // Cameras > Nikon D300
         const priceText: string = await page.locator('div.col-sm-4 ul.list-unstyled li h2').innerText();  // '$98.00'
         const priceWithoutDollar: string = priceText.replace('$', '');  // '98.00'
         const priceValue: number = parseFloat(priceWithoutDollar);
