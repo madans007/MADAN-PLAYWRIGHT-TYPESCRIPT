@@ -12,19 +12,20 @@ export class Cameras {
         this.cameraProductNames =  page.locator('div.caption h4 a');
      }
 
-     async camerasPageValidation(){
+     async getCamerasPageTitle(){
         const camerasPageText: string = await this.camerasPage.innerText();
         return camerasPageText;
      }
 
-     async clickAndSelectProduct(){
+     async clickAndSelectProduct(productName: string){
         const allCameraProducts: number= await this.cameraProductNames.count();
+
         for (let i = 0; i < allCameraProducts; i++) {
             const cameraName: string = await this.cameraProductNames.nth(i).innerText();
             console.log(`Name of Item:, ${cameraName}`);
-            if (cameraName === 'Nikon D300') {
+            if (cameraName === productName) {
                 await this.cameraProductNames.nth(i).click();
-                break;
+                return;
             }
         }
      }
