@@ -6,6 +6,7 @@ test.describe('End to End flow', () => {
 
     test('Full e2e flow', async ({ page }) => {
 
+        //Login
         await page.goto('https://tutorialsninja.com/demo/index.php?route=account/login');
         const email: Locator = page.locator('input#input-email');
         await expect(email).toBeVisible();
@@ -16,10 +17,9 @@ test.describe('End to End flow', () => {
         const signIn: Locator = page.locator('input.btn-primary');
         await expect(signIn).toBeEnabled();
         await signIn.click();
-
+        //Account
         const navBarItems: Locator = page.locator('ul.navbar-nav li a');
         const allNavBarItems: number = await navBarItems.count();
-
         for (let i = 0; i < allNavBarItems; i++) {
             const navBarItemName: string = await navBarItems.nth(i).innerText();
             if (navBarItemName === 'Cameras') {
@@ -27,11 +27,10 @@ test.describe('End to End flow', () => {
                 break;
             }
         }
-
+        //Cameras
         const camerasPage: Locator = page.locator('div.col-sm-9 h2');
         const camerasPageText: string = await camerasPage.innerText();
         expect(camerasPageText).toBe('Cameras');
-
 
         const cameraProductNames: Locator = page.locator('div.caption h4 a');
         const allCameraProducts: number = await cameraProductNames.count();
@@ -39,7 +38,6 @@ test.describe('End to End flow', () => {
         for (let i = 0; i < allCameraProducts; i++) {
             const cameraName: string = await cameraProductNames.nth(i).innerText();
             console.log(`Name of Item:, ${cameraName}`);
-            //const cameraNameFirstName: string = cameraName.split(' ')[0];
             if (cameraName === 'Nikon D300') {
                 await cameraProductNames.nth(i).click();
                 break;
