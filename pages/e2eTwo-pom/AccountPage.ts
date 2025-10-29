@@ -1,7 +1,7 @@
 import { Page, Locator } from '@playwright/test';
 
 
-export class Accountpage {
+export class AccountPage {
 
     private readonly page: Page;
     private readonly navBarItems: Locator;

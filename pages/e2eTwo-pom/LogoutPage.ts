@@ -1,7 +1,7 @@
 import { Page, Locator } from '@playwright/test';
 
 
-export class ShoppingCartPage {
+export class LogoutPage {
 
     private readonly page: Page;
     private readonly logoutText: Locator;

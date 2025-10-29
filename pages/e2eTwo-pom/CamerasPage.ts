@@ -1,6 +1,6 @@
 import { Page, Locator } from '@playwright/test';
 
-export class Cameras {
+export class CamerasPage {
 
    private readonly page: Page;
    private readonly camerasPage: Locator;
