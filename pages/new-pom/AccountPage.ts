@@ -11,7 +11,7 @@ export class Accountpage {
         this.navBarItems = page.locator('ul.navbar-nav li a');
     }
 
-    async clickOnCameras(itemName: string) {
+    async clickOnCameras(itemName: string): Promise<void> {
         const allNavBarItems: number = await this.navBarItems.count();
         for (let i = 0; i < allNavBarItems; i++) {
             const navBarItemName: string = await this.navBarItems.nth(i).innerText();
