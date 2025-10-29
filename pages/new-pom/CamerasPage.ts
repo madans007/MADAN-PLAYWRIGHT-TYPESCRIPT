@@ -12,12 +12,12 @@ export class Cameras {
       this.cameraProductNames = page.locator('div.caption h4 a');
    }
 
-   async getCamerasPageTitle() {
+   async getCamerasPageTitle(): Promise<string> {
       const camerasPageText: string = await this.camerasPage.innerText();
       return camerasPageText;
    }
 
-   async clickAndSelectProduct(productName: string) {
+   async clickAndSelectProduct(productName: string): Promise<void> {
       const allCameraProducts: number = await this.cameraProductNames.count();
 
       for (let i = 0; i < allCameraProducts; i++) {
