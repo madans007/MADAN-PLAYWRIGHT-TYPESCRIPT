@@ -3,7 +3,6 @@ import { test, expect, Locator } from '@playwright/test';
 
 test.describe('End to End flow', () => {
 
-
     test('Full e2e flow', async ({ page }) => {
 
         await page.goto('https://tutorialsninja.com/demo/index.php?route=account/login');
