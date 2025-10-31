@@ -1,4 +1,5 @@
-import { Page, Locator } from '@playwright/test';
+import {Page, Locator } from '@playwright/test';
+import { Logger } from 'utils/logger';
 
 
 export class ShoppingCartPage {
@@ -34,7 +35,8 @@ export class ShoppingCartPage {
 
     async getWarningMessage(): Promise<string> {
         const warningMessage = await this.warningMessageEle.innerText();
-        console.log('Warning message:', warningMessage.trim());
+        //console.log('Warning message:', warningMessage.trim());
+        Logger.info(`Warning message: ${warningMessage.trim()}`);
         return warningMessage.trim();
     }
 

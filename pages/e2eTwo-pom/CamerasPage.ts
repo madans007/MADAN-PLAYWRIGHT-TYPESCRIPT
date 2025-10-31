@@ -1,4 +1,5 @@
 import { Page, Locator } from '@playwright/test';
+import { Logger } from '../../utils/logger';
 
 export class CamerasPage {
 
@@ -22,7 +23,8 @@ export class CamerasPage {
 
       for (let i = 0; i < allCameraProducts; i++) {
          const cameraName: string = await this.cameraProductNames.nth(i).innerText();
-         console.log(`Name of Item:, ${cameraName}`);
+         //console.log(`Name of Item:, ${cameraName}`);
+         Logger.info(`Name of Item: ${cameraName}`);
          if (cameraName === productName) {
             await this.cameraProductNames.nth(i).click();
             return;
