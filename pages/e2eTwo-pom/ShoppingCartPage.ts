@@ -32,7 +32,7 @@ export class ShoppingCartPage {
         this.myAccountDropdown = page.locator('ul.dropdown-menu-right li a');
     }
 
-    async validateWarningMsg(): Promise<string> {
+    async getWarningMessage(): Promise<string> {
         const warningMessage = await this.warningMessageEle.innerText();
         console.log('Warning message:', warningMessage.trim());
         return warningMessage.trim();
@@ -72,7 +72,7 @@ export class ShoppingCartPage {
         await this.shippingButton.click();
     }
 
-    async validateSuccessMsg(): Promise<string> {
+    async getSuccessMessage(): Promise<string> {
         const successFullMessage = await this.successMessageText.innerText();
         return successFullMessage.trim();
     }

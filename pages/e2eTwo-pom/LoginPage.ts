@@ -15,7 +15,19 @@ export class LoginPage {
         this.signInButton = page.locator('input.btn-primary');
     }
 
-    async enterEmail(email: string): Promise<void> {
+    get emailInput(): Locator {                                 // getteres to expose locators
+        return this.inputEmail;
+    }
+
+    get passwordInput(): Locator {
+        return this.inputPassword;
+    }
+
+    get signIn(): Locator {
+        return this.signInButton;
+    }
+    
+    async enterEmail(email: string): Promise<void> {            //actions
         await this.inputEmail.fill(email);
     }
 

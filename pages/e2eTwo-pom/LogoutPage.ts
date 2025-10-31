@@ -12,7 +12,7 @@ export class LogoutPage {
 
     }
 
-    async validateLogoutText(): Promise<string> {
+    async getLogoutText(): Promise<string> {
         const accLogoutText = await this.logoutText.innerText();
         return accLogoutText.trim();
     }
