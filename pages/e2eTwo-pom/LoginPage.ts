@@ -15,7 +15,7 @@ export class LoginPage {
         this.signInButton = page.locator('input.btn-primary');
     }
 
-    get emailInput(): Locator {                                 // getteres to expose locators
+    get emailInput(): Locator {                                 // getters to expose locators
         return this.inputEmail;
     }
 
