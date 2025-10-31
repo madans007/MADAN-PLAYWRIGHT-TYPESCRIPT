@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+/*import { test, expect } from '@playwright/test';
 
 test('test', async ({ page }) => {
   await page.goto('https://tutorialsninja.com/demo/index.php?route=account/login');
@@ -38,3 +38,5 @@ test('test', async ({ page }) => {
   await page.getByRole('link', { name: ' My Account' }).click();
   await page.getByRole('link', { name: 'Logout' }).click();
 });
+
+*/

@@ -1,7 +1,7 @@
 import { test, expect, Locator } from '@playwright/test';
 
 
-test.describe('End to End flow', () => {
+test.describe('Group1', () => {
 
     test('Full e2e flow', async ({ page }) => {
 

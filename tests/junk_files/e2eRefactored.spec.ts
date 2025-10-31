@@ -1,4 +1,4 @@
-import { test, expect, Locator } from '@playwright/test';
+/* import { test, expect, Locator } from '@playwright/test';
 
 test.describe('Group1', () => {
 
@@ -51,3 +51,5 @@ test.describe('Group1', () => {
     });
 
 });
+
+*/

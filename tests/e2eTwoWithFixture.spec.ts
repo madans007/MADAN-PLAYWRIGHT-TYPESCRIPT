@@ -5,7 +5,7 @@ import { PAGE_TITLES, NAV_ITEMS, PRODUCTS, SHOPPING_CART, SHIPPING } from '../ut
 import { TestData } from '../utils/types';
 
 
-test.describe('Group 1', () => {
+test.describe('Group1', () => {
 
     const testData: TestData = DataProvider.getTestDataFromJson('testdata/data.json')[0];
 
@@ -23,7 +23,7 @@ test.describe('Group 1', () => {
         await expect(page).toHaveTitle(PAGE_TITLES.MY_ACCOUNT);
         await accountPage.clickOnCameras(NAV_ITEMS.CAMERAS);
 
-        expect(await camerasPage.getCamerasPageTitle()).toBe(PAGE_TITLES.CAMERAS);
+        expect(await camerasPage.getCamerasPageTitle()).toBe(PAGE_TITLES.CAMERAS);      //method ()
         await camerasPage.clickAndSelectProduct(PRODUCTS.NIKON_D300);
 
         await nikonProductPage.getProdPriceValue();

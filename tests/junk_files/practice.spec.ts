@@ -1,4 +1,4 @@
-import { test, expect, Locator } from '@playwright/test';
+/*import { test, expect, Locator } from '@playwright/test';
 
 test.describe('first Group', () => {
 
@@ -11,6 +11,8 @@ test.describe('first Group', () => {
         await valueInputField.fill('sun images');
         await valueInputField.press('Enter');
         await page.locator('a:has(span:has-text("Images"))').click();     //tagname:has-text()
+
+
         // await page.locator(`a:has-text('Images')`).click();
         // await page.locator('a.C6AK7c >> text=Images').click(); //tag.classnme >> text=  
        // await page.getByText('Images').click();
@@ -20,3 +22,5 @@ test.describe('first Group', () => {
 });
 
 // this fails due to captcha..so can be ignored
+
+*/

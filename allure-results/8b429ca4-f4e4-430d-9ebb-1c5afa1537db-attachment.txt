@@ -1,0 +1,6 @@
+[INFO] 2025-10-31T19:32:39.501Z - Name of Item: Canon EOS 5D
+[INFO] 2025-10-31T19:32:39.504Z - Name of Item: Nikon D300
+[INFO] 2025-10-31T19:32:40.489Z - Warning message: Products marked with *** are not available in the desired quantity or not in stock!
+×
+[INFO] 2025-10-31T19:32:40.493Z - Warning message: Products marked with *** are not available in the desired quantity or not in stock!
+×
