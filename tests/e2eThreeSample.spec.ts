@@ -19,6 +19,12 @@ test.describe('Group 1', () => {
         const camerasPage: Locator = page.getByRole('heading', { name: 'Cameras' });
         await expect(camerasPage).toBeVisible();
         await expect(camerasPage).toHaveText('Cameras');
+        await page.getByRole('link', { name: 'Nikon D300' }).locator('../../..').getByRole('button', { name: 'Add to Cart' }).click();
+        //const nikonProduct: Locator = page.locator('.product-thumb', { has: page.getByRole('link', { name: 'Nikon D300' }) });
+        //await nikonProduct.getByRole('button', { name: 'Add to Cart' }).click();
+        await page.getByText('item(s)').click();
+        await page.getByText('View Cart').click();
+        
 
 
 
