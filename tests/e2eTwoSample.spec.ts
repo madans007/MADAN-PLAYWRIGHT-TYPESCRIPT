@@ -11,7 +11,7 @@ test.describe('Group1', () => {
         await email.fill('hello1@email.com');
         const password: Locator = page.locator('input#input-password');
         await expect(password).toBeVisible();
-        await password.fill('Hello');
+        await password.fill('Hello1');
         const signIn: Locator = page.locator('input.btn-primary');
         await expect(signIn).toBeEnabled();
         await signIn.click();

@@ -7,7 +7,7 @@ test.describe('Group1', async () => {
         await page.goto('https://tutorialsninja.com/demo/index.php?route=account/login');
         await expect(page).toHaveTitle('Account Login');
         await page.locator('#input-email').fill('hello1@email.com');
-        await page.locator('#input-password').fill('Hello');
+        await page.locator('#input-password').fill('Hello1');
         await page.locator('.btn-primary[type="Submit"]').click();
         await expect(page).toHaveTitle('My Account');
         const navItems = await page.locator('ul.navbar-nav li').elementHandles();
