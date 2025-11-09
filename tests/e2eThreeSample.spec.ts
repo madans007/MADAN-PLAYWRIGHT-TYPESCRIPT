@@ -30,7 +30,9 @@ test.describe('Group 1', () => {
         expect(warningMessage).toContainText('not available');
         await page.getByRole('link', { name: 'Estimate Shipping & Taxes ' }).click();
         await page.getByLabel('Country').selectOption({ label: 'India' });         // for dropdown
-        
-
+        await page.getByLabel('Region / State').selectOption({ label: 'Karnataka' });         // for dropdown
+        //await page.getByPlaceholder('Post Code').fill('560083'); 
+        //await page.getByLabel('Post Code').fill('560083');
+        await page.getByRole('textbox', { name: 'Post Code' }).fill('560083');
     });
 });
