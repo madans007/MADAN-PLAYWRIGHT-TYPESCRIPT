@@ -24,11 +24,13 @@ test.describe('Group 1', () => {
         //await nikonProduct.getByRole('button', { name: 'Add to Cart' }).click();
         await page.getByText('item(s)').click();
         await page.getByText('View Cart').click();
-        
-        const warningMessage: Locator  = page.getByText('Products marked with *** are not available in the desired quantity or not in stock!     ');
+
+        const warningMessage: Locator = page.getByText('Products marked with *** are not available in the desired quantity or not in stock!     ');
         console.log(warningMessage);
         expect(warningMessage).toContainText('not available');
-        await page.getByRole('link', {name: 'Estimate Shipping & Taxes '}).click();
+        await page.getByRole('link', { name: 'Estimate Shipping & Taxes ' }).click();
+        await page.getByLabel('Country').selectOption({ label: 'India' });         // for dropdown
+        
 
     });
 });
