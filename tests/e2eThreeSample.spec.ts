@@ -34,5 +34,8 @@ test.describe('Group 1', () => {
         //await page.getByPlaceholder('Post Code').fill('560083'); 
         //await page.getByLabel('Post Code').fill('560083');
         await page.getByRole('textbox', { name: 'Post Code' }).fill('560083');
+        await page.getByRole('button', { name: 'Get Quotes' }).click();
+        await page.getByLabel('Flat Shipping Rate - $5.00').check();
+
     });
 });

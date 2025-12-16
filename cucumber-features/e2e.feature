@@ -8,3 +8,4 @@ Feature: Sample end to end flow in an ecommerce site.
     When user navigates to Cameras page
     And user adds product "Nikon" to the cart
     Then Shopping Cart page should be displayed
+

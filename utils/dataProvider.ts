@@ -7,7 +7,7 @@ import { parse } from 'csv-parse/sync';
 export class DataProvider {
 
     static getTestDataFromJson(filePath: string) {
-        const raw = fs.readFileSync(filePath, 'utf8');      // read file synchronously
+        const raw: string = fs.readFileSync(filePath, 'utf8');      // read file synchronously
         return JSON.parse(raw);                             // converts JSON formatted string to a js object.
     }
 
